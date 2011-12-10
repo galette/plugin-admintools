@@ -1,0 +1,48 @@
+#: ../templates/default/admintools.tpl:17
+msgid "You should use that function if you can see strange characters in your datas; after a manual import, or if you've not used Galette's update scripts."
+msgstr ""
+
+#: ../templates/default/menu.tpl:2
+msgid "Admin Tools"
+msgstr ""
+
+#: ../templates/default/admintools.tpl:18
+msgid "That conversion stuff will read your entire database, and write back each non UTF-8 values after conversion; this may take a while."
+msgstr ""
+
+#: ../templates/default/admintools.tpl:16
+msgid "Converts the whole database data to UTF-8, do not change anything on the tables, just proceed data conversion."
+msgstr ""
+
+#: ../templates/default/admintools.tpl:9
+msgid "Database tools"
+msgstr ""
+
+#: ../admintools.php:57
+msgid "Database should have been successfully converted to UTF-8!"
+msgstr ""
+
+#: ../templates/default/admintools.tpl:11
+msgid "Make sure you've done a backup of the database before using any of the following tools!"
+msgstr ""
+
+#: ../admintools.php:80
+msgid "Administration tools"
+msgstr ""
+
+#: ../templates/default/menu.tpl:4
+msgid "Admin tools"
+msgstr ""
+
+#: ../templates/default/menu.tpl:4
+msgid "Various administrative tools"
+msgstr ""
+
+#: ../templates/default/admintools.tpl:15
+msgid "That function is available for MySQL installations only!"
+msgstr ""
+
+#: ../templates/default/admintools.tpl:21
+msgid "Convert encoding"
+msgstr ""
+
