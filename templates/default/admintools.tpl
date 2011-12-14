@@ -5,6 +5,17 @@
 {/if}
     <section>
         <form action="" method="post">
+            <fieldset>
+                <legend class="ui-state-active ui-corner-top">{_T string="Content tools"}</legend>
+                <div class="warningbox">
+                    <p>{_T string="Make sure you've done a backup of the database before using any of the following tools!"}</p>
+                </div>
+                <article>
+                    <p class="center">
+                        <input name="inittexts" type="submit" value="{_T string="Reinitialize emails contents"}}"/>
+                    </p>
+                </article>
+            </fieldset>
 			<fieldset class="">
 				<legend class="ui-state-active ui-corner-top">{_T string="Database tools"}</legend>
                 <div class="warningbox">

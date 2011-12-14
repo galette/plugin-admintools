@@ -57,6 +57,16 @@ if ( isset($_POST['convert_encoding']) ) {
     $success = _T("Database should have been successfully converted to UTF-8!");
 }
 
+if ( isset($_POST['inittexts']) ) {
+    //proceed mails texts reinitialization
+    require_once $base_path . 'classes/texts.class.php';
+    $texts = new Texts();
+    $res = $texts->installInit(false);
+    if ( $texts === true ) {
+        $success_detected[] = _T("Texts has been successfully reinitialized.")
+    }
+}
+
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
 $orig_template_path = $tpl->template_dir;
