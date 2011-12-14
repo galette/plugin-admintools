@@ -12,7 +12,7 @@
                 </div>
                 <article>
                     <p class="center">
-                        <input name="inittexts" type="submit" value="{_T string="Reinitialize emails contents"}}"/>
+                        <input name="inittexts" type="submit" value="{_T string="Reinitialize emails contents"}"/>
                     </p>
                 </article>
             </fieldset>

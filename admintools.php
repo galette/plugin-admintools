@@ -63,7 +63,7 @@ if ( isset($_POST['inittexts']) ) {
     $texts = new Texts();
     $res = $texts->installInit(false);
     if ( $texts === true ) {
-        $success_detected[] = _T("Texts has been successfully reinitialized.")
+        $success_detected[] = _T("Texts has been successfully reinitialized.");
     }
 }
 
