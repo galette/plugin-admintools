@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2011-12-10 22:01+0100\n"
+"PO-Revision-Date: 2011-12-15 05:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: fr\n"
@@ -14,7 +14,15 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../templates/default/admintools.tpl:17
+#: ../templates/default/menu.tpl:2
+msgid "Admin Tools"
+msgstr "Outils Admin"
+
+#: ../templates/default/admintools.tpl:15
+msgid "Reinitialize emails contents"
+msgstr "Réinitialiser les contenus des emails"
+
+#: ../templates/default/admintools.tpl:28
 msgid ""
 "You should use that function if you can see strange characters in your "
 "datas; after a manual import, or if you've not used Galette's update scripts."
@@ -23,11 +31,15 @@ msgstr ""
 "dans vos données ; après un import manuel, ou si vous n'avez pas utilisé les "
 "scripts de mise à jour de Galette."
 
-#: ../templates/default/menu.tpl:2
-msgid "Admin Tools"
-msgstr "Outils Admin"
+#: ../templates/default/admintools.tpl:27
+msgid ""
+"Converts the whole database data to UTF-8, do not change anything on the "
+"tables, just proceed data conversion."
+msgstr ""
+"Converti l'ensemble des données de la base  en UTF-8, ne change rien sur les "
+"tables, effectue juste la conversion."
 
-#: ../templates/default/admintools.tpl:18
+#: ../templates/default/admintools.tpl:29
 msgid ""
 "That conversion stuff will read your entire database, and write back each "
 "non UTF-8 values after conversion; this may take a while."
@@ -36,15 +48,15 @@ msgstr ""
 "écrire chaque valeur non UTF-8 après conversion. Cela peut prendre un "
 "certain temps."
 
-#: ../templates/default/admintools.tpl:16
-msgid ""
-"Converts the whole database data to UTF-8, do not change anything on the "
-"tables, just proceed data conversion."
-msgstr ""
-"Converti l'ensemble des données de la base  en UTF-8, ne change rien sur les "
-"tables, effectue juste la conversion."
+#: ../admintools.php:66
+msgid "Texts has been successfully reinitialized."
+msgstr "Les textes ont été réinitialisés avec succès."
 
 #: ../templates/default/admintools.tpl:9
+msgid "Content tools"
+msgstr "Outils de contenus"
+
+#: ../templates/default/admintools.tpl:20
 msgid "Database tools"
 msgstr "Outils de base de données"
 
@@ -53,6 +65,7 @@ msgid "Database should have been successfully converted to UTF-8!"
 msgstr "La base de données devrait avoir été convertie en UTF-8&nbsp;!"
 
 #: ../templates/default/admintools.tpl:11
+#: ../templates/default/admintools.tpl:22
 msgid ""
 "Make sure you've done a backup of the database before using any of the "
 "following tools!"
@@ -60,7 +73,7 @@ msgstr ""
 "Assurez-vous de faire une sauvegarde de votre base de données avant "
 "d'utiliser l'un des outils suivants&nbsp;!"
 
-#: ../admintools.php:80
+#: ../admintools.php:90
 msgid "Administration tools"
 msgstr "Outils d'administration"
 
@@ -72,11 +85,12 @@ msgstr "Outils admin"
 msgid "Various administrative tools"
 msgstr "Divers outils administratifs"
 
-#: ../templates/default/admintools.tpl:15
+#: ../templates/default/admintools.tpl:26
 msgid "That function is available for MySQL installations only!"
 msgstr ""
 "Cette fonction n'est disponible que pour les installations sous MySQL&nbsp;!"
 
-#: ../templates/default/admintools.tpl:21
+#: ../templates/default/admintools.tpl:32
 msgid "Convert encoding"
 msgstr "Conversion de l'encodage"
+
