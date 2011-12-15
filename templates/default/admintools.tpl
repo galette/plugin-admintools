@@ -1,8 +1,3 @@
-{if $success}
-    <div id="infobox">
-        {$success}
-    </div>
-{/if}
     <section>
         <form action="" method="post">
             <fieldset>

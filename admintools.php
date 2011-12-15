@@ -50,11 +50,12 @@ if ( !$login->isSuperAdmin() ) {
     die();
 }
 
-$success = false;
+$error_detected = array();
+$success_detected = array();
 if ( isset($_POST['convert_encoding']) ) {
     //proeceed data encoding conversion
     $zdb->convertToUTF(PREFIX_DB, true);
-    $success = _T("Database should have been successfully converted to UTF-8!");
+    $success_detected[] = _T("Database should have been successfully converted to UTF-8!");
 }
 
 if ( isset($_POST['inittexts']) ) {
@@ -62,8 +63,10 @@ if ( isset($_POST['inittexts']) ) {
     require_once $base_path . 'classes/texts.class.php';
     $texts = new Texts();
     $res = $texts->installInit(false);
-    if ( $texts === true ) {
+    if ( $res === true ) {
         $success_detected[] = _T("Texts has been successfully reinitialized.");
+    } else {
+        $error_detected[] = _T("An error occured reinitializing texts :(");
     }
 }
 
@@ -88,8 +91,11 @@ $tpl->assign(
     'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/'
 );
 $tpl->assign('page_title', _T("Administration tools"));
-if ( $success !== false ) {
-    $tpl->assign('success', $success);
+if ( count($error_detected) > 0 ) {
+    $tpl->assign('error_detected', $error_detected);
+}
+if ( count($success_detected) > 0 ) {
+    $tpl->assign('success_detected', $success_detected);
 }
 $content = $tpl->fetch('admintools.tpl', ADMINTOOLS_SMARTY_PREFIX);
 $tpl->assign('content', $content);
