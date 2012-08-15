@@ -35,5 +35,5 @@
  * @since     Available since 0.7dev - 2011-11-21
  */
 
-define('ADMINTOOLS_SMARTY_PREFIX', 'plugins|admintools');
+define('ADMINTOOLS_SMARTY_PREFIX', 'plugins_admintools');
 ?>
