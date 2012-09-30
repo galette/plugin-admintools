@@ -69,6 +69,21 @@ if ( isset($_POST['inittexts']) ) {
     }
 }
 
+if ( isset($_POST['emptylogins']) ) {
+    //proceed empty logins and passwords
+    //those ones cannot be null
+    $members = new Galette\Repository\Members();
+    $res = $members->emptylogins();
+    if ( $res === true ) {
+        $success_detected[] = str_replace(
+            '%i',
+            $members->getCount(),
+            _T("Logins and passwords has been successfully filled (%i processed).")
+        );
+    } else {
+        $error_detected[] = _T("An error occured filling empty logins and passwords :(");
+    }
+}
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
 $orig_template_path = $tpl->template_dir;

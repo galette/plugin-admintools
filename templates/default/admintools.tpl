@@ -10,6 +10,11 @@
                         <input name="inittexts" type="submit" value="{_T string="Reinitialize emails contents"}"/>
                     </p>
                 </article>
+                <article>
+                    <p class="center">
+                        <input name="emptylogins" type="submit" value="{_T string="Generate values for empty logins and passwords"}"/>
+                    </p>
+                </article>
             </fieldset>
             <fieldset>
                 <legend class="ui-state-active ui-corner-top">{_T string="Database tools"}</legend>
