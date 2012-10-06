@@ -11,11 +11,12 @@
                     </p>
                 </article>
             </fieldset>
-			<fieldset class="">
-				<legend class="ui-state-active ui-corner-top">{_T string="Database tools"}</legend>
+            <fieldset>
+                <legend class="ui-state-active ui-corner-top">{_T string="Database tools"}</legend>
                 <div class="warningbox">
                     <p>{_T string="Make sure you've done a backup of the database before using any of the following tools!"}</p>
                 </div>
+{if $smarty.const.TYPE_DB == 'mysql'}
                 <article>
                     <p>
                         <span>{_T string="That function is available for MySQL installations only!"}</span><br/>
@@ -27,6 +28,7 @@
                         <input name="convert_encoding" type="submit" value="{_T string="Convert encoding"}"/>
                     </p>
                 </article>
+{/if}
             </fieldset>
         </form>
     </section>

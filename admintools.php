@@ -60,8 +60,7 @@ if ( isset($_POST['convert_encoding']) ) {
 
 if ( isset($_POST['inittexts']) ) {
     //proceed mails texts reinitialization
-    require_once $base_path . 'classes/texts.class.php';
-    $texts = new Texts();
+    $texts = new Galette\Entity\Texts();
     $res = $texts->installInit(false);
     if ( $res === true ) {
         $success_detected[] = _T("Texts has been successfully reinitialized.");
