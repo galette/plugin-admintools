@@ -1,3 +1,7 @@
+#: ../admintools.php:58
+msgid "Database should have been successfully converted to UTF-8!"
+msgstr ""
+
 #: ../templates/default/menu.tpl:2
 msgid "Admin Tools"
 msgstr ""
@@ -6,23 +10,31 @@ msgstr ""
 msgid "Reinitialize emails contents"
 msgstr ""
 
-#: ../templates/default/admintools.tpl:23
+#: ../templates/default/admintools.tpl:29
 msgid "You should use that function if you can see strange characters in your datas; after a manual import, or if you've not used Galette's update scripts."
 msgstr ""
 
-#: ../templates/default/admintools.tpl:22
+#: ../templates/default/admintools.tpl:28
 msgid "Converts the whole database data to UTF-8, do not change anything on the tables, just proceed data conversion."
 msgstr ""
 
-#: ../templates/default/admintools.tpl:24
+#: ../templates/default/admintools.tpl:30
 msgid "That conversion stuff will read your entire database, and write back each non UTF-8 values after conversion; this may take a while."
 msgstr ""
 
-#: ../admintools.php:67
+#: ../templates/default/admintools.tpl:15
+msgid "Generate values for empty logins and passwords"
+msgstr ""
+
+#: ../admintools.php:66
 msgid "Texts has been successfully reinitialized."
 msgstr ""
 
-#: ../admintools.php:69
+#: ../templates/default/menu.tpl:4
+msgid "Various administrative tools"
+msgstr ""
+
+#: ../admintools.php:68
 msgid "An error occured reinitializing texts :("
 msgstr ""
 
@@ -30,19 +42,19 @@ msgstr ""
 msgid "Content tools"
 msgstr ""
 
-#: ../templates/default/admintools.tpl:15
+#: ../templates/default/admintools.tpl:20
 msgid "Database tools"
 msgstr ""
 
-#: ../admintools.php:58
-msgid "Database should have been successfully converted to UTF-8!"
+#: ../admintools.php:84
+msgid "An error occured filling empty logins and passwords :("
 msgstr ""
 
-#: ../templates/default/admintools.tpl:6 ../templates/default/admintools.tpl:17
+#: ../templates/default/admintools.tpl:6 ../templates/default/admintools.tpl:22
 msgid "Make sure you've done a backup of the database before using any of the following tools!"
 msgstr ""
 
-#: ../admintools.php:93
+#: ../admintools.php:107
 msgid "Administration tools"
 msgstr ""
 
@@ -50,15 +62,15 @@ msgstr ""
 msgid "Admin tools"
 msgstr ""
 
-#: ../templates/default/menu.tpl:4
-msgid "Various administrative tools"
-msgstr ""
-
-#: ../templates/default/admintools.tpl:21
-msgid "That function is available for MySQL installations only!"
+#: ../admintools.php:81
+msgid "Logins and passwords has been successfully filled (%i processed)."
 msgstr ""
 
 #: ../templates/default/admintools.tpl:27
+msgid "That function is available for MySQL installations only!"
+msgstr ""
+
+#: ../templates/default/admintools.tpl:33
 msgid "Convert encoding"
 msgstr ""
 
