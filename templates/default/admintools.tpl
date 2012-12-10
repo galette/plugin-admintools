@@ -8,6 +8,7 @@
                 <article>
                     <p class="center">
                         <input name="inittexts" type="submit" value="{_T string="Reinitialize emails contents"}"/>
+                        <input name="initfields" type="submit" value="{_T string="Reinitialize fields configuration"}"/>
                     </p>
                 </article>
                 <article>

@@ -38,6 +38,11 @@
  * @since     Available since 0.7dev - 2011-11-21
  */
 
+use Galette\Entity\Adherent as Adherent;
+use Galette\Entity\FieldsConfig as FieldsConfig;
+use Galette\Entity\Texts as Texts;
+use Galette\Repository\Members as Members;
+
 define('GALETTE_BASE_PATH', '../../');
 
 require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
@@ -61,7 +66,7 @@ if ( isset($_POST['convert_encoding']) ) {
 
 if ( isset($_POST['inittexts']) ) {
     //proceed mails texts reinitialization
-    $texts = new Galette\Entity\Texts();
+    $texts = new Texts();
     $res = $texts->installInit(false);
     if ( $res === true ) {
         $success_detected[] = _T("Texts has been successfully reinitialized.");
@@ -70,10 +75,22 @@ if ( isset($_POST['inittexts']) ) {
     }
 }
 
+if ( isset($_POST['initfields']) ) {
+    //proceed fields configuration reinitialization
+    $a = new Adherent();
+    $fc = new FieldsConfig(Adherent::TABLE, $a->fields);
+    $res = $fc->init(true);
+    if ( $res === true ) {
+        $success_detected[] = _T("Fields configuration has been successfully reinitialized.");
+    } else {
+        $error_detected[] = _T("An error occured reinitializing fields configuration :(");
+    }
+}
+
 if ( isset($_POST['emptylogins']) ) {
     //proceed empty logins and passwords
     //those ones cannot be null
-    $members = new Galette\Repository\Members();
+    $members = new Members();
     $res = $members->emptylogins();
     if ( $res === true ) {
         $success_detected[] = str_replace(
