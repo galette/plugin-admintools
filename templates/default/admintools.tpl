@@ -8,6 +8,12 @@
                 <article>
                     <p class="center">
                         <input name="inittexts" type="submit" value="{_T string="Reinitialize emails contents"}"/>
+                        <input name="initfields" type="submit" value="{_T string="Reinitialize fields configuration"}"/>
+                    </p>
+                </article>
+                <article>
+                    <p class="center">
+                        <input name="emptylogins" type="submit" value="{_T string="Generate values for empty logins and passwords"}"/>
                     </p>
                 </article>
             </fieldset>

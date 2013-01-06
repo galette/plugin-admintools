@@ -11,7 +11,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2011-2012 The Galette Team
+ * Copyright © 2011-2013 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -31,22 +31,28 @@
  * @category  Plugins
  * @package   GalettePaypal
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2011-2012 The Galette Team
+ * @copyright 2011-2013 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id: owners.php 556 2009-03-13 06:48:49Z trashy $
  * @link      http://galette.tuxfamily.org
  * @since     Available since 0.7dev - 2011-11-21
  */
 
-$base_path = '../../';
-require_once $base_path . 'includes/galette.inc.php';
+use Galette\Entity\Adherent as Adherent;
+use Galette\Entity\FieldsConfig as FieldsConfig;
+use Galette\Entity\Texts as Texts;
+use Galette\Repository\Members as Members;
+
+define('GALETTE_BASE_PATH', '../../');
+
+require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 
 //Constants and classes from plugin
 require_once '_config.inc.php';
 
 //restricted to superadmin only
 if ( !$login->isSuperAdmin() ) {
-    header('location: ' . $base_path . 'index.php');
+    header('location: ' . GALETTE_BASE_PATH . 'index.php');
     die();
 }
 
@@ -60,7 +66,7 @@ if ( isset($_POST['convert_encoding']) ) {
 
 if ( isset($_POST['inittexts']) ) {
     //proceed mails texts reinitialization
-    $texts = new Galette\Entity\Texts();
+    $texts = new Texts();
     $res = $texts->installInit(false);
     if ( $res === true ) {
         $success_detected[] = _T("Texts has been successfully reinitialized.");
@@ -69,6 +75,33 @@ if ( isset($_POST['inittexts']) ) {
     }
 }
 
+if ( isset($_POST['initfields']) ) {
+    //proceed fields configuration reinitialization
+    $a = new Adherent();
+    $fc = new FieldsConfig(Adherent::TABLE, $a->fields);
+    $res = $fc->init(true);
+    if ( $res === true ) {
+        $success_detected[] = _T("Fields configuration has been successfully reinitialized.");
+    } else {
+        $error_detected[] = _T("An error occured reinitializing fields configuration :(");
+    }
+}
+
+if ( isset($_POST['emptylogins']) ) {
+    //proceed empty logins and passwords
+    //those ones cannot be null
+    $members = new Members();
+    $res = $members->emptylogins();
+    if ( $res === true ) {
+        $success_detected[] = str_replace(
+            '%i',
+            $members->getCount(),
+            _T("Logins and passwords has been successfully filled (%i processed).")
+        );
+    } else {
+        $error_detected[] = _T("An error occured filling empty logins and passwords :(");
+    }
+}
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
 $orig_template_path = $tpl->template_dir;
