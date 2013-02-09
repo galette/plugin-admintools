@@ -66,7 +66,7 @@ if ( isset($_POST['convert_encoding']) ) {
 
 if ( isset($_POST['inittexts']) ) {
     //proceed mails texts reinitialization
-    $texts = new Texts();
+    $texts = new Texts($preferences);
     $res = $texts->installInit(false);
     if ( $res === true ) {
         $success_detected[] = _T("Texts has been successfully reinitialized.");
@@ -79,7 +79,7 @@ if ( isset($_POST['initfields']) ) {
     //proceed fields configuration reinitialization
     $a = new Adherent();
     $fc = new FieldsConfig(Adherent::TABLE, $a->fields);
-    $res = $fc->init(true);
+    $res = $fc->init(false, true);
     if ( $res === true ) {
         $success_detected[] = _T("Fields configuration has been successfully reinitialized.");
     } else {
