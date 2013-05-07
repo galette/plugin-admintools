@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Mon Dec 10 22:48:31 2012 (GMT)
+// This file was automatically generated on Sat Feb  9 18:47:39 2013 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -61,7 +61,7 @@ $lang['You should use that function if you can see strange characters in your da
 $lang['Various administrative tools'] = 'Divers outils administratifs';
 
 // ../admintools.php:84 
-$lang['Fields configuration has been successfully reinitialized.'] = 'La configuration du champs a été réinitialisée avec succès.';
+$lang['Fields configuration has been successfully reinitialized.'] = 'La configuration des champs a été réinitialisée avec succès.';
 
 // ../templates/default/menu.tpl:2 
 $lang['Admin Tools'] = 'Outils Admin';
