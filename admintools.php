@@ -79,7 +79,7 @@ if ( isset($_POST['initfields']) ) {
     //proceed fields configuration reinitialization
     $a = new Adherent();
     $fc = new FieldsConfig(Adherent::TABLE, $a->fields);
-    $res = $fc->init(false, true);
+    $res = $fc->installInit($zdb);
     if ( $res === true ) {
         $success_detected[] = _T("Fields configuration has been successfully reinitialized.");
     } else {
