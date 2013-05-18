@@ -102,6 +102,18 @@ if ( isset($_POST['emptylogins']) ) {
         $error_detected[] = _T("An error occured filling empty logins and passwords :(");
     }
 }
+
+if ( isset($_POST['checkmodules']) ) {
+    $cm = new Galette\Core\CheckModules();
+    $modules_ok = $cm->isValid();
+    if ( !$modules_ok ) {
+        $error_detected[] = _T("Some PHP modules are missing. Please install them or contact your support.<br/>More informations on required modules may be found in the documentation.");
+    }
+    $modules_res = $cm->toHtml();
+    $tpl->assign('modules_res', $modules_res);
+    $tpl->assign('require_dialog', true);
+}
+
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
 $orig_template_path = $tpl->template_dir;
