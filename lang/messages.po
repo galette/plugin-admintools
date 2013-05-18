@@ -2,23 +2,19 @@
 msgid "An error occured reinitializing fields configuration :("
 msgstr ""
 
-#: ../templates/default/admintools.tpl:30
-msgid "You should use that function if you can see strange characters in your datas; after a manual import, or if you've not used Galette's update scripts."
+#: ../templates/default/admintools.tpl:47
+msgid "Modules report"
 msgstr ""
 
 #: ../admintools.php:84
 msgid "Fields configuration has been successfully reinitialized."
 msgstr ""
 
-#: ../templates/default/admintools.tpl:4
-msgid "Content tools"
-msgstr ""
-
 #: ../admintools.php:64
 msgid "Database should have been successfully converted to UTF-8!"
 msgstr ""
 
-#: ../templates/default/admintools.tpl:6 ../templates/default/admintools.tpl:23
+#: ../templates/default/admintools.tpl:6 ../templates/default/admintools.tpl:29
 msgid "Make sure you've done a backup of the database before using any of the following tools!"
 msgstr ""
 
@@ -26,23 +22,31 @@ msgstr ""
 msgid "Various administrative tools"
 msgstr ""
 
+#: ../templates/default/admintools.tpl:21
+msgid "Check PHP modules"
+msgstr ""
+
+#: ../templates/default/admintools.tpl:35
+msgid "You should use that function if you can see strange characters in your datas; after a manual import, or if you've not used Galette's update scripts."
+msgstr ""
+
 #: ../templates/default/admintools.tpl:10
 msgid "Reinitialize emails contents"
 msgstr ""
 
-#: ../templates/default/admintools.tpl:29
-msgid "Converts the whole database data to UTF-8, do not change anything on the tables, just proceed data conversion."
+#: ../templates/default/admintools.tpl:4
+msgid "Content tools"
 msgstr ""
 
 #: ../admintools.php:74
 msgid "An error occured reinitializing texts :("
 msgstr ""
 
-#: ../templates/default/menu.tpl:2
-msgid "Admin Tools"
+#: ../templates/default/admintools.tpl:34
+msgid "Converts the whole database data to UTF-8, do not change anything on the tables, just proceed data conversion."
 msgstr ""
 
-#: ../templates/default/admintools.tpl:21
+#: ../templates/default/admintools.tpl:27
 msgid "Database tools"
 msgstr ""
 
@@ -50,12 +54,16 @@ msgstr ""
 msgid "Logins and passwords has been successfully filled (%i processed)."
 msgstr ""
 
-#: ../templates/default/admintools.tpl:28
+#: ../templates/default/admintools.tpl:33
 msgid "That function is available for MySQL installations only!"
 msgstr ""
 
-#: ../templates/default/admintools.tpl:34
+#: ../templates/default/admintools.tpl:39
 msgid "Convert encoding"
+msgstr ""
+
+#: ../admintools.php:110
+msgid "Some PHP modules are missing. Please install them or contact your support.<br/>More informations on required modules may be found in the documentation."
 msgstr ""
 
 #: ../templates/default/admintools.tpl:16
@@ -70,11 +78,15 @@ msgstr ""
 msgid "An error occured filling empty logins and passwords :("
 msgstr ""
 
-#: ../admintools.php:125
+#: ../admintools.php:137
 msgid "Administration tools"
 msgstr ""
 
-#: ../templates/default/admintools.tpl:31
+#: ../templates/default/menu.tpl:2
+msgid "Admin Tools"
+msgstr ""
+
+#: ../templates/default/admintools.tpl:36
 msgid "That conversion stuff will read your entire database, and write back each non UTF-8 values after conversion; this may take a while."
 msgstr ""
 

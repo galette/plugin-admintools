@@ -1,10 +1,10 @@
 # Header entry was created by Lokalize.
 #
-# , 2012.
+# , 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2012-12-10 23:47+0100\n"
+"PO-Revision-Date: 2013-05-18 23:37+0200\n"
 "Last-Translator: \n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: fr\n"
@@ -18,28 +18,20 @@ msgstr ""
 msgid "An error occured reinitializing fields configuration :("
 msgstr "An error occured reinitializing fields configuration :("
 
-#: ../templates/default/admintools.tpl:30
-msgid ""
-"You should use that function if you can see strange characters in your "
-"datas; after a manual import, or if you've not used Galette's update scripts."
-msgstr ""
-"You should use that function if you can see strange characters in your "
-"datas; after a manual import, or if you've not used Galette's update scripts."
+#: ../templates/default/admintools.tpl:47
+msgid "Modules report"
+msgstr "Modules report"
 
 #: ../admintools.php:84
 msgid "Fields configuration has been successfully reinitialized."
 msgstr "Fields configuration has been successfully reinitialized."
-
-#: ../templates/default/admintools.tpl:4
-msgid "Content tools"
-msgstr "Content tools"
 
 #: ../admintools.php:64
 msgid "Database should have been successfully converted to UTF-8!"
 msgstr "Database should have been successfully converted to UTF-8!"
 
 #: ../templates/default/admintools.tpl:6
-#: ../templates/default/admintools.tpl:23
+#: ../templates/default/admintools.tpl:29
 msgid ""
 "Make sure you've done a backup of the database before using any of the "
 "following tools!"
@@ -51,11 +43,31 @@ msgstr ""
 msgid "Various administrative tools"
 msgstr "Various administrative tools"
 
+#: ../templates/default/admintools.tpl:21
+msgid "Check PHP modules"
+msgstr "Check PHP modules"
+
+#: ../templates/default/admintools.tpl:35
+msgid ""
+"You should use that function if you can see strange characters in your "
+"datas; after a manual import, or if you've not used Galette's update scripts."
+msgstr ""
+"You should use that function if you can see strange characters in your "
+"datas; after a manual import, or if you've not used Galette's update scripts."
+
 #: ../templates/default/admintools.tpl:10
 msgid "Reinitialize emails contents"
 msgstr "Reinitialize emails contents"
 
-#: ../templates/default/admintools.tpl:29
+#: ../templates/default/admintools.tpl:4
+msgid "Content tools"
+msgstr "Content tools"
+
+#: ../admintools.php:74
+msgid "An error occured reinitializing texts :("
+msgstr "An error occured reinitializing texts :("
+
+#: ../templates/default/admintools.tpl:34
 msgid ""
 "Converts the whole database data to UTF-8, do not change anything on the "
 "tables, just proceed data conversion."
@@ -63,15 +75,7 @@ msgstr ""
 "Converts the whole database data to UTF-8, do not change anything on the "
 "tables, just proceed data conversion."
 
-#: ../admintools.php:74
-msgid "An error occured reinitializing texts :("
-msgstr "An error occured reinitializing texts :("
-
-#: ../templates/default/menu.tpl:2
-msgid "Admin Tools"
-msgstr "Admin Tools"
-
-#: ../templates/default/admintools.tpl:21
+#: ../templates/default/admintools.tpl:27
 msgid "Database tools"
 msgstr "Database tools"
 
@@ -79,13 +83,21 @@ msgstr "Database tools"
 msgid "Logins and passwords has been successfully filled (%i processed)."
 msgstr "Logins and passwords has been successfully filled (%i processed)."
 
-#: ../templates/default/admintools.tpl:28
+#: ../templates/default/admintools.tpl:33
 msgid "That function is available for MySQL installations only!"
 msgstr "That function is available for MySQL installations only!"
 
-#: ../templates/default/admintools.tpl:34
+#: ../templates/default/admintools.tpl:39
 msgid "Convert encoding"
 msgstr "Convert encoding"
+
+#: ../admintools.php:110
+msgid ""
+"Some PHP modules are missing. Please install them or contact your support."
+"<br/>More informations on required modules may be found in the documentation."
+msgstr ""
+"Some PHP modules are missing. Please install them or contact your support."
+"<br/>More informations on required modules may be found in the documentation."
 
 #: ../templates/default/admintools.tpl:16
 msgid "Generate values for empty logins and passwords"
@@ -99,11 +111,15 @@ msgstr "Admin tools"
 msgid "An error occured filling empty logins and passwords :("
 msgstr "An error occured filling empty logins and passwords :("
 
-#: ../admintools.php:125
+#: ../admintools.php:137
 msgid "Administration tools"
 msgstr "Administration tools"
 
-#: ../templates/default/admintools.tpl:31
+#: ../templates/default/menu.tpl:2
+msgid "Admin Tools"
+msgstr "Admin Tools"
+
+#: ../templates/default/admintools.tpl:36
 msgid ""
 "That conversion stuff will read your entire database, and write back each "
 "non UTF-8 values after conversion; this may take a while."
