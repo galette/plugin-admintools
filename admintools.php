@@ -66,7 +66,7 @@ if ( isset($_POST['convert_encoding']) ) {
 
 if ( isset($_POST['inittexts']) ) {
     //proceed mails texts reinitialization
-    $texts = new Texts($preferences);
+    $texts = new Texts($texts_fields, $preferences);
     $res = $texts->installInit(false);
     if ( $res === true ) {
         $success_detected[] = _T("Texts has been successfully reinitialized.");
