@@ -9,6 +9,7 @@
                     <p class="center">
                         <input name="inittexts" type="submit" value="{_T string="Reinitialize emails contents"}"/>
                         <input name="initfields" type="submit" value="{_T string="Reinitialize fields configuration"}"/>
+                        <input name="initpdfmodels" type="submit" value="{_T string="Reinitialize PDF models"}"/>
                     </p>
                 </article>
                 <article>
@@ -43,7 +44,7 @@
 {/if}
         </form>
     </section>
-{if $modules_res}
+{if isset($modules_res)}
     <section id="modules" title="{_T string="Modules report"}">
         {$modules_res}
     </section>

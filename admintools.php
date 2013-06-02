@@ -38,10 +38,11 @@
  * @since     Available since 0.7dev - 2011-11-21
  */
 
-use Galette\Entity\Adherent as Adherent;
-use Galette\Entity\FieldsConfig as FieldsConfig;
-use Galette\Entity\Texts as Texts;
-use Galette\Repository\Members as Members;
+use Galette\Entity\Adherent;
+use Galette\Entity\FieldsConfig;
+use Galette\Entity\Texts;
+use Galette\Repository\Members;
+use Galette\Repository\PdfModels;
 
 define('GALETTE_BASE_PATH', '../../');
 
@@ -84,6 +85,17 @@ if ( isset($_POST['initfields']) ) {
         $success_detected[] = _T("Fields configuration has been successfully reinitialized.");
     } else {
         $error_detected[] = _T("An error occured reinitializing fields configuration :(");
+    }
+}
+
+if ( isset($_POST['initpdfmodels']) ) {
+    //proceed mails texts reinitialization
+    $models = new PdfModels($zdb, $preferences);
+    $res = $models->installInit($pdfmodels_fields);
+    if ( $res === true ) {
+        $success_detected[] = _T("PDF models has been successfully reinitialized.");
+    } else {
+        $error_detected[] = _T("An error occured reinitializing PDF models :(");
     }
 }
 
