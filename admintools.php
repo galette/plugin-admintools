@@ -91,7 +91,7 @@ if ( isset($_POST['initfields']) ) {
 if ( isset($_POST['initpdfmodels']) ) {
     //proceed mails texts reinitialization
     $models = new PdfModels($zdb, $preferences);
-    $res = $models->installInit($pdfmodels_fields);
+    $res = $models->installInit($pdfmodels_fields, true);
     if ( $res === true ) {
         $success_detected[] = _T("PDF models has been successfully reinitialized.");
     } else {
