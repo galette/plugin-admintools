@@ -38,10 +38,11 @@
  * @since     Available since 0.7dev - 2011-11-21
  */
 
-use Galette\Entity\Adherent as Adherent;
-use Galette\Entity\FieldsConfig as FieldsConfig;
-use Galette\Entity\Texts as Texts;
-use Galette\Repository\Members as Members;
+use Galette\Entity\Adherent;
+use Galette\Entity\FieldsConfig;
+use Galette\Entity\Texts;
+use Galette\Repository\Members;
+use Galette\Repository\PdfModels;
 
 define('GALETTE_BASE_PATH', '../../');
 
@@ -66,7 +67,7 @@ if ( isset($_POST['convert_encoding']) ) {
 
 if ( isset($_POST['inittexts']) ) {
     //proceed mails texts reinitialization
-    $texts = new Texts($preferences);
+    $texts = new Texts($texts_fields, $preferences);
     $res = $texts->installInit(false);
     if ( $res === true ) {
         $success_detected[] = _T("Texts has been successfully reinitialized.");
@@ -87,6 +88,17 @@ if ( isset($_POST['initfields']) ) {
     }
 }
 
+if ( isset($_POST['initpdfmodels']) ) {
+    //proceed mails texts reinitialization
+    $models = new PdfModels($zdb, $preferences);
+    $res = $models->installInit($pdfmodels_fields, false);
+    if ( $res === true ) {
+        $success_detected[] = _T("PDF models has been successfully reinitialized.");
+    } else {
+        $error_detected[] = _T("An error occured reinitializing PDF models :(");
+    }
+}
+
 if ( isset($_POST['emptylogins']) ) {
     //proceed empty logins and passwords
     //those ones cannot be null
@@ -102,6 +114,18 @@ if ( isset($_POST['emptylogins']) ) {
         $error_detected[] = _T("An error occured filling empty logins and passwords :(");
     }
 }
+
+if ( isset($_POST['checkmodules']) ) {
+    $cm = new Galette\Core\CheckModules();
+    $modules_ok = $cm->isValid();
+    if ( !$modules_ok ) {
+        $error_detected[] = _T("Some PHP modules are missing. Please install them or contact your support.<br/>More informations on required modules may be found in the documentation.");
+    }
+    $modules_res = $cm->toHtml();
+    $tpl->assign('modules_res', $modules_res);
+    $tpl->assign('require_dialog', true);
+}
+
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
 $orig_template_path = $tpl->template_dir;
