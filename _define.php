@@ -40,7 +40,7 @@ $this->register(
     'Administration tools',     //Short description
     'Johan Cwiklinski',         //Author
     '1.4',                      //Version
-    '0.7.5',                    //Galette compatible version
+    '0.8',                      //Galette compatible version
     '2013-08-10',               //Release date
     null                        //Permissions needed - not yet implemented
 );
