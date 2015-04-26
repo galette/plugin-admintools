@@ -59,11 +59,6 @@ if ( !$login->isSuperAdmin() ) {
 
 $error_detected = array();
 $success_detected = array();
-if ( isset($_POST['convert_encoding']) ) {
-    //proeceed data encoding conversion
-    $zdb->convertToUTF(PREFIX_DB, true);
-    $success_detected[] = _T("Database should have been successfully converted to UTF-8!");
-}
 
 if ( isset($_POST['inittexts']) ) {
     //proceed mails texts reinitialization
@@ -158,4 +153,3 @@ $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
 $tpl->display('page.tpl', ADMINTOOLS_SMARTY_PREFIX);
-?>
