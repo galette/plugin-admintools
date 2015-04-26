@@ -1,3 +1,7 @@
+* 2015-04-26 - 1.6
+- Fix fields configuration reset
+- Drop encoding conversion
+
 * 2014-09-14 - 1.5
 - Galette 0.8 compatibility
 
