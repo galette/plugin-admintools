@@ -59,11 +59,6 @@ if ( !$login->isSuperAdmin() ) {
 
 $error_detected = array();
 $success_detected = array();
-if ( isset($_POST['convert_encoding']) ) {
-    //proeceed data encoding conversion
-    $zdb->convertToUTF(PREFIX_DB, true);
-    $success_detected[] = _T("Database should have been successfully converted to UTF-8!");
-}
 
 if ( isset($_POST['inittexts']) ) {
     //proceed mails texts reinitialization
@@ -78,8 +73,8 @@ if ( isset($_POST['inittexts']) ) {
 
 if ( isset($_POST['initfields']) ) {
     //proceed fields configuration reinitialization
-    $a = new Adherent();
-    $fc = new FieldsConfig(Adherent::TABLE, $a->fields);
+    include_once GALETTE_BASE_PATH . 'includes/fields_defs/members_fields.php';
+    $fc = new FieldsConfig(Adherent::TABLE, $members_fields, true);
     $res = $fc->installInit($zdb);
     if ( $res === true ) {
         $success_detected[] = _T("Fields configuration has been successfully reinitialized.");
@@ -158,4 +153,3 @@ $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
 $tpl->display('page.tpl', ADMINTOOLS_SMARTY_PREFIX);
-?>
