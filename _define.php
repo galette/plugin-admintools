@@ -39,7 +39,7 @@ $this->register(
     'Galette Admin Tools',      //Name
     'Administration tools',     //Short description
     'Johan Cwiklinski',         //Author
-    '1.5',                      //Version
+    '1.6',                      //Version
     '0.8',                      //Galette compatible version
     '2014-09-14',               //Release date
     null                        //Permissions needed - not yet implemented
