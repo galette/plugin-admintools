@@ -74,7 +74,8 @@ if ( isset($_POST['inittexts']) ) {
 if ( isset($_POST['initfields']) ) {
     //proceed fields configuration reinitialization
     include_once GALETTE_BASE_PATH . 'includes/fields_defs/members_fields.php';
-    $fc = new FieldsConfig(Adherent::TABLE, $members_fields, true);
+    include_once GALETTE_BASE_PATH . 'includes/fields_defs/members_fields_cats.php';
+    $fc = new FieldsConfig(Adherent::TABLE, $members_fields, $members_fields_cats, true);
     $res = $fc->installInit($zdb);
     if ( $res === true ) {
         $success_detected[] = _T("Fields configuration has been successfully reinitialized.");
